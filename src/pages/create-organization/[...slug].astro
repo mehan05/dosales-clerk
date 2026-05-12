@@ -1,0 +1,18 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import { CreateOrganization } from '@clerk/astro/components';
+---
+
+<Layout title="Create Organization | DoSales">
+  <div class="profile-container">
+    <CreateOrganization />
+  </div>
+</Layout>
+
+<style>
+  .profile-container {
+    display: flex;
+    justify-content: center;
+    padding: 2rem 0;
+  }
+</style>

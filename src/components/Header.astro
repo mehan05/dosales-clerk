@@ -1,0 +1,142 @@
+---
+import {
+  Show,
+  UserButton,
+  SignInButton,
+  SignUpButton,
+  OrganizationSwitcher,
+} from '@clerk/astro/components';
+---
+
+<header class="header">
+  <div class="container">
+    <div class="logo">
+      <a href="/">
+        <span class="logo-text">DoSales</span>
+      </a>
+    </div>
+
+    <nav class="nav">
+      <a href="/" class="nav-link">Home</a>
+      <Show when="signed-in">
+        <a href="/organizations" class="nav-link">Organizations</a>
+        <a href="/user-profile" class="nav-link">Profile</a>
+      </Show>
+    </nav>
+
+    <div class="actions">
+      <Show when="signed-out">
+        <SignInButton mode="modal" asChild={true}>
+          <button class="btn btn-secondary">Sign In</button>
+        </SignInButton>
+        <SignUpButton mode="modal" asChild={true}>
+          <button class="btn btn-primary">Sign Up</button>
+        </SignUpButton>
+      </Show>
+      <Show when="signed-in">
+        <OrganizationSwitcher 
+          afterCreateOrganizationUrl="/organization-profile"
+          appearance={{
+            elements: {
+              organizationSwitcherTrigger: "org-switcher-trigger"
+            }
+          }}
+        />
+        <UserButton userProfileMode="navigation" userProfileUrl="/user-profile" />
+      </Show>
+    </div>
+  </div>
+</header>
+
+<style>
+  .header {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    background: rgba(255, 255, 255, 0.8);
+    backdrop-filter: blur(12px);
+    border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+    padding: 0.75rem 0;
+    font-family: 'Inter', system-ui, sans-serif;
+  }
+
+  .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 1.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .logo-text {
+    font-size: 1.5rem;
+    font-weight: 800;
+    background: linear-gradient(135deg, #026AA2 0%, #004e7a 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    letter-spacing: -0.02em;
+  }
+
+  .nav {
+    display: flex;
+    gap: 2rem;
+    align-items: center;
+  }
+
+  .nav-link {
+    text-decoration: none;
+    color: #4A5565;
+    font-weight: 500;
+    font-size: 0.95rem;
+    transition: color 0.2s;
+  }
+
+  .nav-link:hover {
+    color: #030712;
+  }
+
+  .actions {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+  }
+
+  .btn {
+    padding: 0.5rem 1rem;
+    border-radius: 8px;
+    font-size: 0.9rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.2s;
+    border: none;
+  }
+
+  .btn-primary {
+    background: #026AA2;
+    color: white;
+  }
+
+  .btn-primary:hover {
+    background: #025a8a;
+    transform: translateY(-1px);
+    box-shadow: 0 4px 12px rgba(2, 106, 162, 0.2);
+  }
+
+  .btn-secondary {
+    background: transparent;
+    color: #026AA2;
+    border: 1px solid #026AA2;
+  }
+
+  .btn-secondary:hover {
+    background: rgba(2, 106, 162, 0.05);
+  }
+
+  /* Custom styling for Clerk components if needed */
+  :global(.org-switcher-trigger) {
+    border: 1px solid #e2e8f0;
+    border-radius: 8px;
+    padding: 4px 8px;
+  }
+</style>

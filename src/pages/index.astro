@@ -1,11 +1,143 @@
 ---
-import Welcome from '../components/Welcome.astro';
-import Layout from '../layouts/Layout.astro';
-
-// Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
-// Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
+import Layout from '../layouts/Layout.astro'
+import { Show } from '@clerk/astro/components'
 ---
 
-<Layout>
-	<Welcome />
+<Layout title="DoSales | Sales Management with Clerk">
+  <div class="hero">
+    <Show when="signed-out">
+      <h1 class="hero-title">Elevate Your Sales Workflow</h1>
+      <p class="hero-subtitle">The all-in-one platform for sales teams. Sign in to start managing your organizations and closing deals.</p>
+      <div class="hero-actions">
+        <a href="/sign-up" class="btn btn-primary">Get Started for Free</a>
+        <a href="/sign-in" class="btn btn-secondary">Sign In</a>
+      </div>
+    </Show>
+
+    <Show when="signed-in">
+      <h1 class="hero-title">Welcome Back to DoSales</h1>
+      <p class="hero-subtitle">You are successfully signed in. Manage your organizations or update your profile.</p>
+      <div class="hero-actions">
+        <a href="/organizations" class="btn btn-primary">Go to Dashboard</a>
+        <a href="/user-profile" class="btn btn-secondary">View Profile</a>
+      </div>
+    </Show>
+  </div>
+
+  <section class="features">
+    <div class="feature-card">
+      <div class="feature-icon">🏢</div>
+      <h3>Multi-Org Support</h3>
+      <p>Easily switch between different organizations and teams.</p>
+    </div>
+    <div class="feature-card">
+      <div class="feature-icon">🔒</div>
+      <h3>Secure Auth</h3>
+      <p>Powered by Clerk for enterprise-grade security and ease of use.</p>
+    </div>
+    <div class="feature-card">
+      <div class="feature-icon">⚡</div>
+      <h3>Fast Performance</h3>
+      <p>Built with Astro for lightning-fast server-side rendering.</p>
+    </div>
+  </section>
 </Layout>
+
+<style>
+  .hero {
+    text-align: center;
+    padding: 6rem 0;
+    max-width: 800px;
+    margin: 0 auto;
+  }
+
+  .hero-title {
+    font-size: 3.5rem;
+    font-weight: 800;
+    line-height: 1.1;
+    margin-bottom: 1.5rem;
+    letter-spacing: -0.04em;
+    background: linear-gradient(135deg, #030712 0%, #4A5565 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+
+  .hero-subtitle {
+    font-size: 1.25rem;
+    color: #4A5565;
+    margin-bottom: 2.5rem;
+    line-height: 1.6;
+  }
+
+  .hero-actions {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+  }
+
+  .btn {
+    padding: 0.75rem 1.5rem;
+    border-radius: 10px;
+    font-size: 1rem;
+    font-weight: 600;
+    transition: all 0.2s;
+  }
+
+  .btn-primary {
+    background: #026AA2;
+    color: white;
+  }
+
+  .btn-primary:hover {
+    background: #025a8a;
+    transform: translateY(-2px);
+    box-shadow: 0 10px 20px rgba(2, 106, 162, 0.15);
+  }
+
+  .btn-secondary {
+    background: white;
+    color: #030712;
+    border: 1px solid #e2e8f0;
+  }
+
+  .btn-secondary:hover {
+    background: #f9fafb;
+    border-color: #cbd5e1;
+  }
+
+  .features {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    margin-top: 4rem;
+  }
+
+  .feature-card {
+    background: white;
+    padding: 2.5rem;
+    border-radius: 16px;
+    border: 1px solid #e2e8f0;
+    transition: all 0.3s;
+  }
+
+  .feature-card:hover {
+    border-color: #026AA2;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.03);
+  }
+
+  .feature-icon {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+  }
+
+  .feature-card h3 {
+    font-size: 1.5rem;
+    margin-bottom: 0.75rem;
+    font-weight: 700;
+  }
+
+  .feature-card p {
+    color: #4A5565;
+    line-height: 1.6;
+  }
+</style>
