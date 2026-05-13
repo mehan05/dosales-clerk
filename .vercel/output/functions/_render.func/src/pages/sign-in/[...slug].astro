@@ -1,0 +1,19 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import { SignIn } from '@clerk/astro/components';
+---
+
+<Layout title="Sign In | DoSales">
+  <div class="auth-container">
+    <SignIn />
+  </div>
+</Layout>
+
+<style>
+  .auth-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: calc(100vh - 200px);
+  }
+</style>

@@ -1,0 +1,18 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import { OrganizationProfile } from '@clerk/astro/components';
+---
+
+<Layout title="Organization Profile | DoSales">
+  <div class="profile-container">
+    <OrganizationProfile />
+  </div>
+</Layout>
+
+<style>
+  .profile-container {
+    display: flex;
+    justify-content: center;
+    padding: 2rem 0;
+  }
+</style>
