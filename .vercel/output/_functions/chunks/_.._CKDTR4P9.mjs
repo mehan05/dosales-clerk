@@ -1,8 +1,8 @@
 import { c as createComponent } from "./astro-component_CpBXEvhD.mjs";
 import "piccolore";
 import { C as renderSlot, Q as renderTemplate, z as maybeRenderHead } from "./params-and-props_DqdMoWg6.mjs";
-import { r as renderComponent } from "./entrypoint_BemXhXYK.mjs";
-import { $ as $$InternalUIComponentRenderer, b as $$CustomProfilePageRenderer, a as $$Layout } from "./Layout_CB6J4B5l.mjs";
+import { r as renderComponent } from "./entrypoint_WzNd_4CP.mjs";
+import { $ as $$InternalUIComponentRenderer, b as $$CustomProfilePageRenderer, a as $$Layout } from "./Layout_Dd7GixNW.mjs";
 const $$UserProfile = createComponent(($$result, $$props, $$slots) => {
   const Astro2 = $$result.createAstro($$props, $$slots);
   Astro2.self = $$UserProfile;
@@ -26,7 +26,7 @@ const UserProfile = Object.assign($$UserProfile, {
   Link: $$UserProfileLink
 });
 const $$ = createComponent(($$result, $$props, $$slots) => {
-  return renderTemplate`${renderComponent($$result, "Layout", $$Layout, { "title": "User Profile | DoSales", "data-astro-cid-6tyafp4b": true }, { "default": ($$result2) => renderTemplate` ${maybeRenderHead()}<div class="profile-container" data-astro-cid-6tyafp4b> ${renderComponent($$result2, "UserProfile", UserProfile, { "data-astro-cid-6tyafp4b": true })} </div> ` })}`;
+  return renderTemplate`${renderComponent($$result, "Layout", $$Layout, { "title": "User Profile | DoSales", "data-astro-cid-6tyafp4b": true }, { "default": ($$result2) => renderTemplate` ${maybeRenderHead()}<div class="profile-container" data-astro-cid-6tyafp4b> ${renderComponent($$result2, "UserProfile", UserProfile, { "client:load": true, "client:component-hydration": "load", "client:component-path": "@clerk/astro/components", "client:component-export": "UserProfile", "data-astro-cid-6tyafp4b": true })} </div> ` })}`;
 }, "/home/mehan/Step_7/calibraint/dosales-clerk/src/pages/user-profile/[...slug].astro", void 0);
 const $$file = "/home/mehan/Step_7/calibraint/dosales-clerk/src/pages/user-profile/[...slug].astro";
 const $$url = "/user-profile/[...slug]";

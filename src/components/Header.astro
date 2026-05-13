@@ -36,6 +36,7 @@ import {
       </Show>
       <Show when="signed-in">
         <OrganizationSwitcher 
+          client:load
           afterCreateOrganizationUrl="/organization-profile"
           appearance={{
             elements: {
@@ -43,7 +44,7 @@ import {
             }
           }}
         />
-        <UserButton userProfileMode="navigation" userProfileUrl="/user-profile" />
+        <UserButton client:load userProfileMode="navigation" userProfileUrl="/user-profile" />
       </Show>
     </div>
   </div>

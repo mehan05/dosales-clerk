@@ -10,6 +10,7 @@ import { OrganizationList } from '@clerk/astro/components';
     
     <div class="clerk-list-wrapper">
       <OrganizationList 
+        client:load
         hidePersonal={false}
         afterCreateOrganizationUrl="/organization-profile"
         afterSelectOrganizationUrl="/"

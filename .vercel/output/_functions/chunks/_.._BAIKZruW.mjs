@@ -1,8 +1,8 @@
 import { c as createComponent } from "./astro-component_CpBXEvhD.mjs";
 import "piccolore";
 import { C as renderSlot, Q as renderTemplate, z as maybeRenderHead } from "./params-and-props_DqdMoWg6.mjs";
-import { r as renderComponent } from "./entrypoint_BemXhXYK.mjs";
-import { $ as $$InternalUIComponentRenderer, b as $$CustomProfilePageRenderer, a as $$Layout } from "./Layout_CB6J4B5l.mjs";
+import { r as renderComponent } from "./entrypoint_WzNd_4CP.mjs";
+import { $ as $$InternalUIComponentRenderer, b as $$CustomProfilePageRenderer, a as $$Layout } from "./Layout_Dd7GixNW.mjs";
 const $$OrganizationProfile = createComponent(($$result, $$props, $$slots) => {
   const Astro2 = $$result.createAstro($$props, $$slots);
   Astro2.self = $$OrganizationProfile;
@@ -26,7 +26,7 @@ const OrganizationProfile = Object.assign($$OrganizationProfile, {
   Link: $$OrganizationProfileLink
 });
 const $$ = createComponent(($$result, $$props, $$slots) => {
-  return renderTemplate`${renderComponent($$result, "Layout", $$Layout, { "title": "Organization Profile | DoSales", "data-astro-cid-4w4mpsdy": true }, { "default": ($$result2) => renderTemplate` ${maybeRenderHead()}<div class="profile-container" data-astro-cid-4w4mpsdy> ${renderComponent($$result2, "OrganizationProfile", OrganizationProfile, { "data-astro-cid-4w4mpsdy": true })} </div> ` })}`;
+  return renderTemplate`${renderComponent($$result, "Layout", $$Layout, { "title": "Organization Profile | DoSales", "data-astro-cid-4w4mpsdy": true }, { "default": ($$result2) => renderTemplate` ${maybeRenderHead()}<div class="profile-container" data-astro-cid-4w4mpsdy> ${renderComponent($$result2, "OrganizationProfile", OrganizationProfile, { "client:load": true, "client:component-hydration": "load", "client:component-path": "@clerk/astro/components", "client:component-export": "OrganizationProfile", "data-astro-cid-4w4mpsdy": true })} </div> ` })}`;
 }, "/home/mehan/Step_7/calibraint/dosales-clerk/src/pages/organization-profile/[...slug].astro", void 0);
 const $$file = "/home/mehan/Step_7/calibraint/dosales-clerk/src/pages/organization-profile/[...slug].astro";
 const $$url = "/organization-profile/[...slug]";

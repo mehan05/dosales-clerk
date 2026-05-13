@@ -1,8 +1,8 @@
 import { c as createComponent } from "./astro-component_CpBXEvhD.mjs";
 import "piccolore";
 import { Q as renderTemplate, z as maybeRenderHead } from "./params-and-props_DqdMoWg6.mjs";
-import { r as renderComponent } from "./entrypoint_BemXhXYK.mjs";
-import { a as $$Layout, c as $$Show } from "./Layout_CB6J4B5l.mjs";
+import { r as renderComponent } from "./entrypoint_WzNd_4CP.mjs";
+import { a as $$Layout, c as $$Show } from "./Layout_Dd7GixNW.mjs";
 const $$Index = createComponent(($$result, $$props, $$slots) => {
   const Astro2 = $$result.createAstro($$props, $$slots);
   Astro2.self = $$Index;
