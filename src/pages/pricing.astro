@@ -1,0 +1,102 @@
+---
+import { PricingTable } from '@clerk/astro/components';
+import Layout from '../layouts/Layout.astro';
+---
+
+<Layout title="Pricing | DoSales">
+  <div class="pricing-page">
+    <header class="page-header">
+      <h1 class="title">Transparent Pricing for Every Team</h1>
+      <p class="subtitle">Choose the plan that's right for your sales organization. All plans include our core Clerk-powered security.</p>
+    </header>
+
+    <PricingTable for="organization" />
+
+    <section class="faq">
+      <h2 class="faq-title">Frequently Asked Questions</h2>
+      <div class="faq-grid">
+        <div class="faq-item">
+          <h3>Can I change plans later?</h3>
+          <p>Yes, you can upgrade or downgrade your plan at any time from your organization settings.</p>
+        </div>
+        <div class="faq-item">
+          <h3>Do you offer annual discounts?</h3>
+          <p>Yes! Contact our sales team for information on annual billing and volume discounts.</p>
+        </div>
+        <div class="faq-item">
+          <h3>Is my data secure?</h3>
+          <p>Absolutely. We use Clerk for industry-leading authentication and follow all security best practices.</p>
+        </div>
+      </div>
+    </section>
+  </div>
+</Layout>
+
+<style>
+  .pricing-page {
+    padding: 4rem 0;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+
+  .page-header {
+    text-align: center;
+    margin-bottom: 5rem;
+  }
+
+  .title {
+    font-size: 3.5rem;
+    font-weight: 800;
+    margin-bottom: 1.5rem;
+    letter-spacing: -0.04em;
+    background: linear-gradient(135deg, #030712 0%, #026AA2 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+
+  .subtitle {
+    font-size: 1.25rem;
+    color: #4A5565;
+    max-width: 700px;
+    margin: 0 auto;
+    line-height: 1.6;
+  }
+
+  .faq {
+    margin-top: 8rem;
+    padding-top: 4rem;
+    border-top: 1px solid #e2e8f0;
+  }
+
+  .faq-title {
+    font-size: 2.25rem;
+    font-weight: 800;
+    text-align: center;
+    margin-bottom: 4rem;
+    color: #030712;
+  }
+
+  .faq-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 3rem;
+  }
+
+  .faq-item h3 {
+    font-size: 1.25rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+    color: #030712;
+  }
+
+  .faq-item p {
+    color: #4A5565;
+    line-height: 1.6;
+  }
+
+  @media (max-width: 768px) {
+    .title {
+      font-size: 2.5rem;
+    }
+  }
+</style>
