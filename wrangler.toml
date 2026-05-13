@@ -1,0 +1,7 @@
+# This file is used for Cloudflare configuration
+compatibility_date = "2024-11-01"
+compatibility_flags = ["nodejs_compat"]
+
+# If using Cloudflare Pages, the 'main' field is not needed here.
+# If using Workers, point to the output during deployment:
+# npx wrangler deploy dist/server/entry.mjs
